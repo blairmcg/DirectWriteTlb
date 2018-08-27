@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectWriteLib", "DirectWrite.vcxproj", "{22B477ED-092A-425D-8A39-652F87C5BB33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Ansi|x86 = Ansi|x86
+		Unicode|x86 = Unicode|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22B477ED-092A-425D-8A39-652F87C5BB33}.Ansi|x86.ActiveCfg = Unicode|Win32
+		{22B477ED-092A-425D-8A39-652F87C5BB33}.Ansi|x86.Build.0 = Unicode|Win32
+		{22B477ED-092A-425D-8A39-652F87C5BB33}.Unicode|x86.ActiveCfg = Unicode|Win32
+		{22B477ED-092A-425D-8A39-652F87C5BB33}.Unicode|x86.Build.0 = Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DB0EBFE-9201-4B71-B3D0-89A4A34FD236}
+	EndGlobalSection
+EndGlobal

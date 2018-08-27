@@ -1,0 +1,6 @@
+.vs
+DirectWriteLib.h
+*_i.c
+*.VC.*
+*.vcxproj.user
+Unicode

@@ -1,0 +1,14 @@
+midl_pragma warning(disable: 2471) // Some attributes and/or data types in the idl and/or included/imported idl files can not be represented in the type library: size_is/length_is etc.
+midl_pragma warning(disable: 2461) // inapplicable attribute : [restricted] [ Field 'blah' of Struct 'BLAH' ( Parameter 'blahblah' ) ]
+midl_pragma warning(disable: 2231) // no remote procedures specified in non-[local] interface; no client/server stubs will be generated : [ Interface 'IBlah'  ]
+
+[
+	uuid(e2213e31-9aaf-4881-abec-f41a7ab57b6b),
+	helpstring("Windows DirectWrite API"),
+	version(10.0)
+]
+library DirectWrite
+{
+    #include "WinDef.idl"
+	#include "dwrite.idl"
+};
