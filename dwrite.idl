@@ -8,7 +8,8 @@ import "ocidl.idl";
 /// </summary>
 typedef
 [
-	v1_enum
+	v1_enum,
+	public
 ]
 enum DWRITE_MEASURING_MODE
 {
@@ -676,7 +677,8 @@ interface IDWriteFontFileStream;
 /// </summary>
 [
 	uuid(727cad4e-d6af-4c9e-8a08-d695b11caa49),
-	helpstring("Font file loader interface handles loading font file resources of a particular type from a key.")
+	helpstring("Font file loader interface handles loading font file resources of a particular type from a key."),
+	local
 ]
 interface IDWriteFontFileLoader : IUnknown
 {
@@ -700,7 +702,8 @@ interface IDWriteFontFileLoader : IUnknown
 
 [ 
 	uuid(b2d9f3ec-c9fe-4a11-a2ec-d86208f7c0a2),
-	helpstring("A built-in implementation of IDWriteFontFileLoader interface that operates on local font files and exposes local font file information from the font file reference key. Font file references created using CreateFontFileReference use this font file loader.")
+	helpstring("A built-in implementation of IDWriteFontFileLoader interface that operates on local font files and exposes local font file information from the font file reference key. Font file references created using CreateFontFileReference use this font file loader."),
+	local
 ]
 interface IDWriteLocalFontFileLoader : IDWriteFontFileLoader
 {
@@ -758,7 +761,8 @@ HRESULT GetLastWriteTimeFromKey(
 
 [ 
 	uuid(6d4865fe-0ab8-4d91-8f62-5dd6be34a3e0),
-	helpstring("The interface for loading font file data.")
+	helpstring("The interface for loading font file data."),
+	local
 ] 
 interface IDWriteFontFileStream : IUnknown
 {
@@ -826,7 +830,8 @@ HRESULT GetLastWriteTime(
 
 [
 	uuid(739d886a-cef5-47dc-8769-1a8b41bebbb0),
-	helpstring("The interface that represents a reference to a font file.")
+	helpstring("The interface that represents a reference to a font file."),
+	local
 ]
 interface IDWriteFontFile : IUnknown
 {
@@ -1011,7 +1016,8 @@ struct DWRITE_MATRIX
 
 [
 	uuid(2f0da53a-2add-47cd-82ee-d9ec34688e75),
-	helpstring("The interface that represents text rendering settings for glyph rasterization and filtering.")
+	helpstring("The interface that represents text rendering settings for glyph rasterization and filtering."),
+	local
 ]
 interface IDWriteRenderingParams : IUnknown
 {
@@ -1049,7 +1055,8 @@ typedef /*ID2D1SimplifiedGeometrySink */ IUnknown IDWriteGeometrySink;
 
 [
 	uuid(5f49804d-7024-4d43-bfa9-d25984f53849),
-	helpstring("This interface exposes various font data such as metrics, names, and glyph outlines. It contains font face type, appropriate file references and face identification data.")
+	helpstring("This interface exposes various font data such as metrics, names, and glyph outlines. It contains font face type, appropriate file references and face identification data."),
+	local
 ]
 interface IDWriteFontFace : IUnknown
 {
@@ -1321,7 +1328,8 @@ interface IDWriteFontFileEnumerator;
 /// </summary>
 [
 	uuid(cca920e4-52f0-492b-bfa8-29c72ee0a468),
-	helpstring("The font collection loader interface is used to construct a collection of fonts given a particular type of key.")
+	helpstring("The font collection loader interface is used to construct a collection of fonts given a particular type of key."),
+	local
 ] 
 interface IDWriteFontCollectionLoader : IUnknown
 {
@@ -1347,7 +1355,8 @@ interface IDWriteFontCollectionLoader : IUnknown
 
 [ 
 	uuid(72755049-5ff7-435d-8348-4be97cfa6c7c),
-	helpstring("The font file enumerator interface encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection.")
+	helpstring("The font file enumerator interface encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection."),
+	local
 ]
 interface IDWriteFontFileEnumerator : IUnknown
 {
@@ -1378,7 +1387,8 @@ HRESULT GetCurrentFontFile(
 
 [ 
 	uuid(08256209-099a-4b34-b86d-c22b110e7771),
-	helpstring("Represents a collection of strings indexed by locale name.")
+	helpstring("Represents a collection of strings indexed by locale name."),
+	local
 ]
 interface IDWriteLocalizedStrings : IUnknown
 {
@@ -1467,7 +1477,8 @@ interface IDWriteFont;
 
 [
 	uuid(a84cee02-3eea-4eee-a827-87c1a02a0fcc),
-	helpstring("The IDWriteFontCollection encapsulates a collection of font families.")
+	helpstring("The IDWriteFontCollection encapsulates a collection of font families."),
+	local
 ]
 interface IDWriteFontCollection : IUnknown
 {
@@ -1521,7 +1532,8 @@ HRESULT GetFontFromFontFace(
 
 [ 
 	uuid(1a0d8438-1d97-4ec1-aef9-a2fb86ed6acb),
-	helpstring("The IDWriteFontList interface represents an ordered set of fonts that are part of an IDWriteFontCollection.")
+	helpstring("The IDWriteFontList interface represents an ordered set of fonts that are part of an IDWriteFontCollection."),
+	local
 ]
 interface IDWriteFontList : IUnknown
 {
@@ -1557,7 +1569,8 @@ HRESULT GetFont(
 
 [
 	uuid(da20d8ef-812a-4c43-9802-62ec4abd7add),
-	helpstring("The IDWriteFontFamily interface represents a set of fonts that share the same design but are differentiated by weight, stretch, and style.")
+	helpstring("The IDWriteFontFamily interface represents a set of fonts that share the same design but are differentiated by weight, stretch, and style."),
+	local
 ]
 interface IDWriteFontFamily : IDWriteFontList
 {
@@ -1609,7 +1622,8 @@ HRESULT GetMatchingFonts(
 
 [
 	uuid(acd16696-8c14-4f5d-877e-fe3fc1d32737),
-	helpstring("The IDWriteFont interface represents a physical font in a font collection.")
+	helpstring("The IDWriteFont interface represents a physical font in a font collection."),
+	local
 ]
 interface IDWriteFont : IUnknown
 {
@@ -2068,7 +2082,8 @@ interface IDWriteInlineObject;
 
 [
 	uuid(9c906818-31d7-4fd3-a151-7c5e225db55a),
-	helpstring("The format of text used for text layout. This object may not be thread-safe and it may carry the state of text format change.")
+	helpstring("The format of text used for text layout. This object may not be thread-safe and it may carry the state of text format change."),
+	local
 ] 
 interface IDWriteTextFormat : IUnknown
 {
@@ -2315,7 +2330,8 @@ HRESULT GetLocaleName(
 
 [ 
 	uuid(55f1112b-1dc2-4b3c-9541-f46894ed85b6),
-	helpstring("Font typography setting.")
+	helpstring("Font typography setting."),
+	local
 ]
 interface IDWriteTypography : IUnknown
 {
@@ -2494,7 +2510,8 @@ typedef [v1_enum] enum DWRITE_NUMBER_SUBSTITUTION_METHOD
 
 [ 
 	uuid(14885CC9-BAB0-4f90-B6ED-5C366A2CD03D),
-	helpstring("Holds the appropriate digits and numeric punctuation for a given locale.")
+	helpstring("Holds the appropriate digits and numeric punctuation for a given locale."),
+	local
 ] 
 interface IDWriteNumberSubstitution : IUnknown
 {
@@ -2575,7 +2592,8 @@ struct DWRITE_SHAPING_GLYPH_PROPERTIES
 	uuid(688e1a58-5094-47c8-adc8-fbcea60ae92b),
 	helpstring("Interface implemented by the text analyzer's client to provide text to the analyzer. \
 Provides separation between the logical view of text as a continuous sequence of characters, \
-and the client memory layout of potentially discrete blocks of text.")
+and the client memory layout of potentially discrete blocks of text."),
+	local
 ] 
 interface IDWriteTextAnalysisSource : IUnknown
 {
@@ -2689,7 +2707,8 @@ HRESULT GetNumberSubstitution(
 [ 
 	uuid(5810cd44-0ca0-4701-b3fa-bec5182ae4f6),
 	helpstring("Interface implemented by the text analyzer's client to receive the output of a given text analysis. \
-The Text analyzer disregards any current state of the analysis sink, so a Set call on a range overwrites the previous analysis result for that range.")
+The Text analyzer disregards any current state of the analysis sink, so a Set call on a range overwrites the previous analysis result for that range."),
+	local
 ] 
 interface IDWriteTextAnalysisSink : IUnknown
 {
@@ -2772,7 +2791,8 @@ HRESULT SetNumberSubstitution(
 
 [
 	uuid(b7e6163e-7f46-43b4-84b3-e4e6249c365d),
-	helpstring("Analyzes various text properties for complex script processing.")
+	helpstring("Analyzes various text properties for complex script processing."),
+	local
 ]
 interface IDWriteTextAnalyzer : IUnknown
 {
@@ -3563,7 +3583,8 @@ interface IDWriteTextRenderer;
 
 [
 	uuid(8339FDE3-106F-47ab-8373-1C6295EB10B3),
-	helpstring("The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text.")
+	helpstring("The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text."),
+	local
 ] 
 interface IDWriteInlineObject : IUnknown
 {
@@ -3641,7 +3662,8 @@ HRESULT GetBreakConditions(
 
 [ 
 	uuid(eaf3a2da-ecf4-4d24-b644-b34f6842024b),
-	helpstring("The IDWritePixelSnapping interface defines the pixel snapping properties of a text renderer.")
+	helpstring("The IDWritePixelSnapping interface defines the pixel snapping properties of a text renderer."),
+	local
 ] 
 interface IDWritePixelSnapping : IUnknown
 {
@@ -3692,7 +3714,8 @@ HRESULT GetPixelsPerDip(
 
 [ 
 	uuid(ef8a8135-5cc6-45fe-8825-c5a0724eb819),
-	helpstring("The IDWriteTextRenderer interface represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.")
+	helpstring("The IDWriteTextRenderer interface represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines."),
+	local
 ] 
 interface IDWriteTextRenderer : IDWritePixelSnapping
 {
@@ -3829,7 +3852,8 @@ HRESULT DrawInlineObject(
 
 [ 
 	uuid(53737037-6d14-410b-9bfe-0b182bb70961),
-	helpstring("The IDWriteTextLayout interface represents a block of text after it has been fully analyzed and formatted. All coordinates are in device independent pixels (DIPs).")
+	helpstring("The IDWriteTextLayout interface represents a block of text after it has been fully analyzed and formatted. All coordinates are in device independent pixels (DIPs)."),
+	local
 ]
 interface IDWriteTextLayout : IDWriteTextFormat
 {
@@ -4470,7 +4494,8 @@ HRESULT HitTestTextRange(
 
 [ 
 	uuid(5e5a32a3-8dff-4773-9ff6-0696eab77267),
-	helpstring("Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.")
+	helpstring("Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs."),
+	local
 ] 
 interface IDWriteBitmapRenderTarget : IUnknown
 {
@@ -4610,7 +4635,8 @@ typedef [uuid(37140088-772D-4f72-AAC2-27311F7805D8), helpstring("The LOGFONTW st
 
 [
 	uuid(1edd9491-9853-4299-898f-6432983b6f3a),
-	helpstring("The GDI interop interface provides interoperability with GDI.")
+	helpstring("The GDI interop interface provides interoperability with GDI."),
+	local
 ]
 interface IDWriteGdiInterop : IUnknown
 {
@@ -4713,7 +4739,8 @@ typedef [v1_enum] enum DWRITE_TEXTURE_TYPE
 
 [
 	uuid(7d97dbf7-e085-42d4-81e3-6a883bded118),
-	helpstring("Interface that encapsulates information used to render a glyph run.")
+	helpstring("Interface that encapsulates information used to render a glyph run."),
+	local
 ]
 interface IDWriteGlyphRunAnalysis : IUnknown
 {

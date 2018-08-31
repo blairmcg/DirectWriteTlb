@@ -4,3 +4,4 @@ DirectWriteLib.h
 *.VC.*
 *.vcxproj.user
 Unicode
+*.tlog
